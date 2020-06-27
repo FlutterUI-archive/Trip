@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trip_ui/fade_in.dart';
 
 void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -34,10 +35,30 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         body: PageView(
       children: [
-        makePage(page: 1, image: "assets/images/one.jpg", title: "Place 1", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the past, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "),
-        makePage(page: 2, image: "assets/images/two.jpg", title: "Place 2", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the past, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "),
-        makePage(page: 3, image: "assets/images/three.jpg", title: "Place 3", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the past, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "),
-        makePage(page: 4, image: "assets/images/four.jpg", title: "Place 4", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the past, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "),
+        makePage(
+            page: 1,
+            image: "assets/images/one.jpg",
+            title: "Place 1",
+            description:
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the past, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "),
+        makePage(
+            page: 2,
+            image: "assets/images/two.jpg",
+            title: "Place 2",
+            description:
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the past, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "),
+        makePage(
+            page: 3,
+            image: "assets/images/three.jpg",
+            title: "Place 3",
+            description:
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the past, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "),
+        makePage(
+            page: 4,
+            image: "assets/images/four.jpg",
+            title: "Place 4",
+            description:
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the past, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "),
       ],
     ));
   }
@@ -77,9 +98,15 @@ class _HomePageState extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    title,
-                    style: TextStyle(color: Colors.white, fontSize: 45, fontWeight: FontWeight.bold ),
+                  FadeIn(
+                    delay: 1,
+                    child: Text(
+                      title,
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 45,
+                          fontWeight: FontWeight.bold),
+                    ),
                   ),
                   SizedBox(height: 10),
                   Row(
@@ -128,16 +155,19 @@ class _HomePageState extends State<HomePage> {
                         "4.0",
                         style: TextStyle(color: Colors.white, fontSize: 18),
                       ),
-                      Text("(1300)", style: TextStyle(color: Colors.grey))
+                      Text(" (1300)", style: TextStyle(color: Colors.grey))
                     ],
                   ),
                   SizedBox(height: 10),
                   Text(description,
-                      style: TextStyle(color: Colors.white.withOpacity(.8), fontSize: 15, letterSpacing: 1,height: 1.4)),
+                      style: TextStyle(
+                          color: Colors.white.withOpacity(.8),
+                          fontSize: 15,
+                          letterSpacing: 1,
+                          height: 1.4)),
                   SizedBox(height: 10),
-                  Text("READ MORE", style: TextStyle(color: Colors.white))
-                  ,
-                  SizedBox(height:10)
+                  Text("READ MORE", style: TextStyle(color: Colors.white)),
+                  SizedBox(height: 30)
                 ],
               ))
             ],
