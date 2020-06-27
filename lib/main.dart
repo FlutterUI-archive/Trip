@@ -34,7 +34,10 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         body: PageView(
       children: [
-        makePage(page: 1, image: "assets/images/one.jpg", title: "Place 1", description: ),
+        makePage(page: 1, image: "assets/images/one.jpg", title: "Place 1", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the past, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "),
+        makePage(page: 2, image: "assets/images/two.jpg", title: "Place 2", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the past, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "),
+        makePage(page: 3, image: "assets/images/three.jpg", title: "Place 3", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the past, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "),
+        makePage(page: 4, image: "assets/images/four.jpg", title: "Place 4", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the past, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "),
       ],
     ));
   }
@@ -75,8 +78,8 @@ class _HomePageState extends State<HomePage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "hello",
-                    style: TextStyle(color: Colors.white),
+                    title,
+                    style: TextStyle(color: Colors.white, fontSize: 45, fontWeight: FontWeight.bold ),
                   ),
                   SizedBox(height: 10),
                   Row(
@@ -129,10 +132,12 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                   SizedBox(height: 10),
-                  Text("data",
-                      style: TextStyle(color: Colors.white, fontSize: 15)),
+                  Text(description,
+                      style: TextStyle(color: Colors.white.withOpacity(.8), fontSize: 15, letterSpacing: 1,height: 1.4)),
                   SizedBox(height: 10),
                   Text("READ MORE", style: TextStyle(color: Colors.white))
+                  ,
+                  SizedBox(height:10)
                 ],
               ))
             ],
