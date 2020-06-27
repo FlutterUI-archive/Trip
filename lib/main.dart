@@ -12,6 +12,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   PageController _pageController;
+  var totalPage = 4;
 
   void _onScroll() {
     print("scrolled");
@@ -33,15 +34,12 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         body: PageView(
       children: [
-        makePage("assets/images/one.jpg"),
-        makePage("assets/images/two.jpg"),
-        makePage("assets/images/three.jpg"),
-        makePage("assets/images/four.jpg"),
+        makePage(page: 1, image: "assets/images/one.jpg"),
       ],
     ));
   }
 
-  Widget makePage(image) {
+  Widget makePage({page, image}) {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(image: AssetImage(image), fit: BoxFit.cover),
@@ -55,6 +53,29 @@ class _HomePageState extends State<HomePage> {
           Colors.black.withOpacity(.9),
           Colors.black.withOpacity(.2)
         ])),
+        child: Padding(
+          padding: EdgeInsets.all(20),
+          child: Column(
+            children: [
+              SizedBox(height: 25),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.baseline,
+                textBaseline: TextBaseline.alphabetic,
+                children: [
+                  Text(page.toString(),
+                      style: TextStyle(color: Colors.white, fontSize: 25)),
+                  Text("/" + totalPage.toString(),
+                      style: TextStyle(color: Colors.white, fontSize: 15))
+                ],
+              ),
+              Expanded(
+                  child: Column(
+                children: [],
+              ))
+            ],
+          ),
+        ),
       ),
     );
   }
