@@ -34,12 +34,12 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         body: PageView(
       children: [
-        makePage(page: 1, image: "assets/images/one.jpg"),
+        makePage(page: 1, image: "assets/images/one.jpg", title: "Place 1", description: ),
       ],
     ));
   }
 
-  Widget makePage({page, image}) {
+  Widget makePage({page, image, title, description}) {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(image: AssetImage(image), fit: BoxFit.cover),
@@ -71,7 +71,69 @@ class _HomePageState extends State<HomePage> {
               ),
               Expanded(
                   child: Column(
-                children: [],
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "hello",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  SizedBox(height: 10),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(right: 5.0),
+                        child: Icon(
+                          Icons.star,
+                          color: Colors.yellow,
+                          size: 13,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(right: 5.0),
+                        child: Icon(
+                          Icons.star,
+                          color: Colors.yellow,
+                          size: 13,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(right: 5.0),
+                        child: Icon(
+                          Icons.star,
+                          color: Colors.yellow,
+                          size: 13,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(right: 5.0),
+                        child: Icon(
+                          Icons.star,
+                          color: Colors.yellow,
+                          size: 13,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(right: 5.0),
+                        child: Icon(
+                          Icons.star,
+                          color: Colors.grey,
+                          size: 13,
+                        ),
+                      ),
+                      Text(
+                        "4.0",
+                        style: TextStyle(color: Colors.white, fontSize: 18),
+                      ),
+                      Text("(1300)", style: TextStyle(color: Colors.grey))
+                    ],
+                  ),
+                  SizedBox(height: 10),
+                  Text("data",
+                      style: TextStyle(color: Colors.white, fontSize: 15)),
+                  SizedBox(height: 10),
+                  Text("READ MORE", style: TextStyle(color: Colors.white))
+                ],
               ))
             ],
           ),
